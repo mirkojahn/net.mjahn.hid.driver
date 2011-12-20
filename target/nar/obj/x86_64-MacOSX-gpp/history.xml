@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 i686-apple-darwin11 -Wall -Wno-long-long -Wpointer-arith -Wconversion -c -fPIC -DDarwin -DGNU_GCC -Itarget/nar/javah-include -I../../../../System/Library/Frameworks/JavaVM.framework/Versions/A/Headers -Isrc/main/include">
+      <target file="hid.o" lastModified="1345c75e770">
+         <source file="../../../../src/main/include/hid.c" lastModified="13458886d18"/>
+      </target>
+   </processor>
+   <processor signature="g++ 4.2.1 i686-apple-darwin11 -Wall -Wno-long-long -Wpointer-arith -Wconversion -c -g -fno-exceptions -fPIC -DDarwin -DGNU_GCC -Itarget/nar/javah-include -I../../../../System/Library/Frameworks/JavaVM.framework/Versions/A/Headers -Isrc/main/include">
+      <target file="HIDDeviceInfo.o" lastModified="1345c75dfa0">
+         <source file="../../../../src/main/include/jni-impl/HIDDeviceInfo.cpp" lastModified="134586846a0"/>
+      </target>
+      <target file="hid-java.o" lastModified="1345c75dfa0">
+         <source file="../../../../src/main/include/jni-impl/hid-java.cpp" lastModified="134586846a0"/>
+      </target>
+      <target file="HIDDevice.o" lastModified="1345c75e388">
+         <source file="../../../../src/main/include/jni-impl/HIDDevice.cpp" lastModified="134586846a0"/>
+      </target>
+      <target file="HIDManager.o" lastModified="1345c75dfa0">
+         <source file="../../../../src/main/include/jni-impl/HIDManager.cpp" lastModified="134586846a0"/>
+      </target>
+   </processor>
+</history>
