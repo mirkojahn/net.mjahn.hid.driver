@@ -1,7 +1,6 @@
 package net.mjahn.hid.driver;
 
-import java.net.URL;
-import java.util.Enumeration;
+import com.codeminders.hidapi.HIDDevice;
 import junit.framework.TestCase;
 import java.io.IOException;
 import com.codeminders.hidapi.HIDManager;
@@ -17,7 +16,7 @@ public class HIDDriverTest extends TestCase {
     }
 
     @Test
-    public void testHIDDriverGeneral() throws IOException {
+    public void testHIDDriverGeneral0() throws IOException {
         listDevices();
         
     }
@@ -28,25 +27,26 @@ public class HIDDriverTest extends TestCase {
 //        HIDDeviceInfo[] devs = HIDManager.listDevices();
 //        //HIDManager.openById(0x0FC5, 0xB080, null);
 //    }
-    
-    
+
     private static void listDevices() {
         String property = System.getProperty("java.library.path");
-        System.err.println(property);
+        System.out.println(property);
         try {
-            HIDDeviceInfo[] devs = HIDManager.listDevices();
-            assertTrue("No USB device found, connect at least one device for verification!",devs != null);
-            assertTrue("No USB device found, connect at least one device for verification!",devs.length != 0);
-            System.err.println("\nConnected HID Devices:\n\n");
+            HIDManager manager = new HIDManagerImpl();
+            HIDDeviceInfo[] devs = manager.listDevices();
+            assertTrue("No USB device found, connect at least one device for verification!", devs != null);
+            assertTrue("No USB device found, connect at least one device for verification!", devs.length != 0);
+            System.out.println("\nConnected HID Devices:\n\n");
             for (int i = 0; i < devs.length; i++) {
-                System.err.println("" + i + ".\t" + devs[i]);
-                System.err.println("---------------------------------------------\n");
+                System.out.println("Device "+i+" ");
+                System.out.println("" + i + ".\t" + devs[i]);
+                System.out.println("---------------------------------------------\n");
             }
+        manager.release();
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }
-    
-    
+
 }
